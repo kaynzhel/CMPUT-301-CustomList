@@ -52,6 +52,6 @@ public class CustomList extends ArrayAdapter<City> {
         return cities.size();
     }
     public void addCity(City c) {
-
+        cities.add(c);
     }
 }
