@@ -47,4 +47,15 @@ public class CustomListTest {
         list.delete(cityDelete); // remove calgary
         assertEquals(0, list.getCount()); // 1 total: edmonton
     }
+
+    @Test
+    public void testCountCities() {
+        assertEquals(0, list.countCities()); // empty list
+        City city1 = new City ("Calgary", "Alberta");
+        City city2 = new City ("Leduc", "Alberta");
+        list.addCity(city1);
+        assertEquals(1, list.countCities()); // 1 total city
+        list.addCity(city2);
+        assertEquals(2, list.countCities()); // 2 total cities
+    }
 }
