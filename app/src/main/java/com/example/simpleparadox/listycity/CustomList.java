@@ -61,6 +61,7 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
     public void delete(City c) {
-
+        int index = cities.indexOf(c);
+        cities.remove(index);
     }
 }
