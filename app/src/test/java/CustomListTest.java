@@ -38,4 +38,17 @@ public class CustomListTest {
         City notIncludedCity= new City ("Calgary", "Alberta");
         assertEquals(false, list.hasCity(notIncludedCity));
     }
+
+    @Test
+    public void testDelete() {
+        City cityDelete = new City ("Calgary", "Alberta");
+        list.addCity(cityDelete);
+        assertEquals(1, list.getCount()); // 1 total city: Calgary
+        list.delete(cityDelete); // remove Calgary
+        assertEquals(1, list.getCount()); // empty list
+        // we try to delete an already deleted city, it should throw an exception
+        assertThrows(IllegalArgumentException.class, ()->{
+            list.delete(cityDelete);
+        });
+    }
 }
