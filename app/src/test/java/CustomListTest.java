@@ -11,6 +11,10 @@ import java.util.ArrayList;
 public class CustomListTest {
     static CustomList list;
 
+    private City mockCity() {
+        return new City("Edmonton", "Alberta");
+    }
+
     @Before
     public void setup(){
         list = new CustomList(null, new ArrayList<City>());
@@ -22,5 +26,16 @@ public class CustomListTest {
         int size = list.getCount();
         list.addCity(c);
         assertEquals(size+1, list.getCount());
+    }
+
+    @Test
+    public void testHasCity() {
+        City includedCity = mockCity();
+        list.addCity(includedCity);
+        // checks if Edmonton exists
+        assertEquals(true, list.hasCity(includedCity));
+        // checks if Calgary exists, it shouldn't
+        City notIncludedCity= new City ("Calgary", "Alberta");
+        assertEquals(false, list.hasCity(notIncludedCity));
     }
 }

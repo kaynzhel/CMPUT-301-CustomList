@@ -41,15 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         cityList.setAdapter(cityAdapter);
 
-//        dataList = new ArrayList<>();
-//        dataList.addAll(Arrays.asList(cities));
-//
-//        cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
-//
-//        cityList.setAdapter(cityAdapter);
-
-
-
     }
 
 
