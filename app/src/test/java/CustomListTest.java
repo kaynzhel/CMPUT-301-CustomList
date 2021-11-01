@@ -38,4 +38,13 @@ public class CustomListTest {
         City notIncludedCity= new City ("Calgary", "Alberta");
         assertEquals(false, list.hasCity(notIncludedCity));
     }
+
+    @Test
+    public void testDelete() {
+        City cityDelete = new City ("Calgary", "Alberta");
+        list.addCity(cityDelete);
+        assertEquals(1, list.getCount()); // 1 total city: Calgary
+        list.delete(cityDelete); // remove calgary
+        assertEquals(0, list.getCount()); // 1 total: edmonton
+    }
 }
